@@ -1,0 +1,374 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #ffffff;
+    min-height: 100vh;
+}
+
+/* Navigation */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(29, 78, 216, 0.1);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(29, 78, 216, 0.2);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #1d4ed8;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 2rem;
+}
+
+nav a {
+    color: #1d4ed8;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #1e40af;
+}
+
+/* Hero Section */
+#hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8rem 2rem 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 100vh;
+}
+
+.hero-content {
+    flex: 1;
+    color: #1d4ed8;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.cta-btn {
+    background: rgba(29, 78, 216, 0.2);
+    border: 1px solid rgba(29, 78, 216, 0.3);
+    color: #1d4ed8;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s;
+    backdrop-filter: blur(10px);
+}
+
+.cta-btn:hover {
+    background: rgba(29, 78, 216, 0.3);
+    transform: translateY(-2px);
+}
+
+.hero-images {
+    flex: 1;
+    display: flex;
+    gap: 2rem;
+}
+
+.hero-images img {
+    width: 250px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.hero-images img:hover {
+    transform: scale(1.05);
+}
+
+/* Products Section */
+#products {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#products h2 {
+    color: #1d4ed8;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.product-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(29, 78, 216, 0.2);
+    border-radius: 15px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.product-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.1);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.product-card:hover::before {
+    opacity: 1;
+}
+
+.product-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    transition: transform 0.3s;
+}
+
+.product-card:hover img {
+    transform: scale(1.1);
+}
+
+.product-card h3 {
+    color: #1d4ed8;
+    margin-bottom: 0.5rem;
+}
+
+.product-card p {
+    color: #374151;
+    font-size: 1.2rem;
+}
+
+/* Calculator Section */
+#calculator {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.calculator-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(29, 78, 216, 0.2);
+    border-radius: 20px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.calculator-card h2 {
+    color: #1d4ed8;
+    margin-bottom: 1.5rem;
+}
+
+#trade-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#trade-form label {
+    color: #1d4ed8;
+    text-align: left;
+}
+
+#trade-form select, #trade-form button {
+    padding: 0.75rem;
+    border: 1px solid rgba(29, 78, 216, 0.3);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    color: #1d4ed8;
+    font-size: 1rem;
+}
+
+#trade-form button {
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#trade-form button:hover {
+    background: rgba(29, 78, 216, 0.2);
+}
+
+#result {
+    margin-top: 1rem;
+    color: #1d4ed8;
+    font-weight: bold;
+}
+
+/* Footer */
+footer {
+    background: rgba(29, 78, 216, 0.1);
+    padding: 2rem;
+    text-align: center;
+    color: #1d4ed8;
+}
+
+.social-links {
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: #1d4ed8;
+    margin: 0 1rem;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #1e40af;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(29, 78, 216, 0.2);
+    margin: 15% auto;
+    padding: 2rem;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #1d4ed8;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#login-form input {
+    padding: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+#login-form button {
+    padding: 0.75rem;
+    border: none;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#login-form button:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 6rem 1rem 2rem;
+    }
+
+    .hero-images {
+        justify-content: center;
+        margin-top: 2rem;
+    }
+
+    .hero-images img {
+        width: 200px;
+        height: 400px;
+    }
+
+    nav ul {
+        display: none; /* Simple hide for mobile, can add hamburger later */
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .calculator-card {
+        padding: 1rem;
+    }
+}
