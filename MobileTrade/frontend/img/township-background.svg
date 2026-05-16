@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#eaf4ff"/>
+      <stop offset="100%" stop-color="#eff7ff"/>
+    </linearGradient>
+    <linearGradient id="hills" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#d8ebff"/>
+      <stop offset="100%" stop-color="#b7d8ff"/>
+    </linearGradient>
+    <linearGradient id="foreground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#f1f8ff" stop-opacity="0.95"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  <path d="M0 560 C 360 500 520 620 820 540 C 1120 460 1320 620 1600 560 L1600 900 L0 900 Z" fill="url(#hills)"/>
+  <g opacity="0.95">
+    <path d="M0 620 L90 600 L180 650 L270 620 L360 660 L450 640 L540 680 L630 660 L720 700 L810 670 L900 720 L990 690 L1080 740 L1170 710 L1260 740 L1350 710 L1440 740 L1530 720 L1600 730 L1600 900 L0 900 Z" fill="#c9e2ff"/>
+  </g>
+  <g fill="#acc8ea" opacity="0.95">
+    <rect x="120" y="520" width="72" height="160" rx="16"/>
+    <rect x="220" y="540" width="96" height="140" rx="18"/>
+    <rect x="340" y="500" width="64" height="180" rx="14"/>
+    <rect x="460" y="530" width="82" height="150" rx="16"/>
+    <rect x="560" y="560" width="68" height="120" rx="14"/>
+    <rect x="680" y="520" width="88" height="160" rx="18"/>
+    <rect x="820" y="500" width="72" height="180" rx="16"/>
+    <rect x="940" y="540" width="98" height="140" rx="18"/>
+    <rect x="1080" y="520" width="62" height="160" rx="14"/>
+    <rect x="1180" y="535" width="76" height="145" rx="16"/>
+    <rect x="1320" y="508" width="70" height="172" rx="16"/>
+    <rect x="1470" y="540" width="90" height="130" rx="18"/>
+  </g>
+  <rect x="0" y="0" width="1600" height="900" fill="url(#foreground)"/>
+</svg>

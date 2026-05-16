@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MobileTrade - C2C Mobile Phone Trading Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">MobileTrade</div>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#products">Phones</a></li>
+                <li><a href="#calculator">Trade-In</a></li>
+                <li><a href="#" id="login-btn">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Trade Your Phone with Confidence</h1>
+            <p>Get the best value for your old device and find your next upgrade.</p>
+            <button class="cta-btn">Start Trading</button>
+        </div>
+        <div class="hero-images">
+            <img src="https://via.placeholder.com/300x600?text=iPhone+15" alt="iPhone 15">
+            <img src="https://via.placeholder.com/300x600?text=Samsung+Galaxy+S24" alt="Samsung Galaxy S24">
+        </div>
+    </section>
+
+    <section id="products">
+        <h2>Featured Phones</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="https://via.placeholder.com/250x400?text=iPhone+14" alt="iPhone 14">
+                <h3>iPhone 14</h3>
+                <p>$699</p>
+            </div>
+            <div class="product-card">
+                <img src="https://via.placeholder.com/250x400?text=Samsung+Galaxy+S23" alt="Samsung Galaxy S23">
+                <h3>Samsung Galaxy S23</h3>
+                <p>$599</p>
+            </div>
+            <div class="product-card">
+                <img src="https://via.placeholder.com/250x400?text=Google+Pixel+8" alt="Google Pixel 8">
+                <h3>Google Pixel 8</h3>
+                <p>$499</p>
+            </div>
+            <div class="product-card">
+                <img src="https://via.placeholder.com/250x400?text=OnePlus+11" alt="OnePlus 11">
+                <h3>OnePlus 11</h3>
+                <p>$649</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="calculator">
+        <div class="calculator-card">
+            <h2>Trade-In Calculator</h2>
+            <form id="trade-form">
+                <label for="phone-model">Phone Model:</label>
+                <select id="phone-model">
+                    <option>iPhone 14</option>
+                    <option>Samsung Galaxy S23</option>
+                    <option>Google Pixel 8</option>
+                    <option>OnePlus 11</option>
+                </select>
+                <label for="condition">Condition:</label>
+                <select id="condition">
+                    <option>Excellent</option>
+                    <option>Good</option>
+                    <option>Fair</option>
+                    <option>Poor</option>
+                </select>
+                <button type="submit">Calculate</button>
+            </form>
+            <div id="result"></div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 MobileTrade. All rights reserved.</p>
+        <div class="social-links">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+        </div>
+    </footer>
+
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Login / Register</h2>
+            <form id="login-form">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+                <button type="button" id="register-btn">Register</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

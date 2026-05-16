@@ -1,0 +1,17 @@
+{
+  "name": "mobiletrade-frontend",
+  "version": "1.0.0",
+  "description": "MobileTrade - Frontend",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 3000",
+    "build": "echo 'No build step required for vanilla JS'"
+  },
+  "keywords": [
+    "mobile",
+    "trading",
+    "frontend"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}
