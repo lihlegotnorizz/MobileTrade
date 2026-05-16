@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MobileTrade - Elegant Phone Marketplace</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-compact">
+        <div class="container nav-row">
+            <a href="#home" class="brand" data-i18n="brand">MobileTrade</a>
+            <div class="nav-right">
+                <ul class="nav-links nav-links-inline">
+                    <li><a href="#marketplace" data-i18n="navMarketplace">Marketplace</a></li>
+                    <li><a href="#tradein" data-i18n="navTradeIn">Trade-In</a></li>
+                    <li><a href="#service" data-i18n="navService">Service</a></li>
+                    <li><a href="#login" class="nav-link btn-outline" id="loginLink" data-i18n="navLogin">Login</a></li>
+                    <li><a href="#register" class="nav-link btn-primary" id="registerLink" data-i18n="navRegister">Register</a></li>
+                    <li><a href="#admin" class="nav-link btn-secondary" id="adminLink" data-i18n="adminLogin">Admin</a></li>
+                </ul>
+                <select id="languageSelect" class="language-select" aria-label="Choose website language">
+                    <option value="en">EN</option>
+                    <option value="af">AF</option>
+                    <option value="xh">XH</option>
+                    <option value="es">ES</option>
+                    <option value="fr">FR</option>
+                </select>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section id="home" class="hero hero-studio">
+            <div class="container hero-grid">
+                <div class="hero-copy">
+                    <span class="eyebrow" data-i18n="heroEyebrow">Trusted South African phone trade</span>
+                    <h1 data-i18n="heroTitle">Buy. Sell. Trade. <span class="hero-keyword">Beautifully.</span></h1>
+                    <p class="hero-text" data-i18n="heroSubtitle">A premium marketplace experience with thoughtful service, secure trade-in paths, and refined listings for every modern buyer.</p>
+                    <div class="hero-actions">
+                        <button class="btn btn-primary" id="sellBtn" data-i18n="sellButton">Sell Your Phone</button>
+                        <button class="btn btn-secondary" id="tradeBtn" data-i18n="tradeButton">Trade-In Now</button>
+                    </div>
+                    <div class="hero-pillars">
+                        <span data-i18n="heroPillar1">Studio-level curation</span>
+                        <span data-i18n="heroPillar2">Local service desk</span>
+                        <span data-i18n="heroPillar3">Clear pricing</span>
+                    </div>
+                </div>
+                <div class="hero-image hero-image-large">
+                    <div class="hero-panel">
+                        <span class="panel-label" data-i18n="heroPanelLabel">Featured</span>
+                        <h2 data-i18n="heroPanelHeading">A premium selection of tested phones.</h2>
+                        <p data-i18n="heroPanelText">Every listing is presented with clarity, strong imagery, and trust built into the customer journey.</p>
+                    </div>
+                    <div class="hero-visual">
+                        <div class="hero-showcase">
+                            <div class="hero-showcase-header">MobileTrade Showcase</div>
+                            <div class="hero-showcase-screen">
+                                <div class="hero-showcase-content"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="marketplace" class="section">
+            <div class="container section-header">
+                <div>
+                    <p class="eyebrow" data-i18n="marketplaceEyebrow">Featured phones</p>
+                    <h2 data-i18n="marketplaceTitle">Available phone listings</h2>
+                </div>
+            </div>
+            <div class="container filters-row">
+                <input type="text" id="searchInput" class="search-box" placeholder="Search phones, models or brands..." data-i18n-placeholder="searchPlaceholder">
+                <select id="brandFilter" class="filter-select">
+                    <option value="" data-i18n="allBrands">All Brands</option>
+                    <option value="iPhone">iPhone</option>
+                    <option value="Samsung">Samsung</option>
+                    <option value="Huawei">Huawei</option>
+                    <option value="Xiaomi">Xiaomi</option>
+                    <option value="OnePlus">OnePlus</option>
+                </select>
+            </div>
+            <div id="phoneListings" class="phone-grid">
+                <p class="loading" data-i18n="loadingListings">Loading listings...</p>
+            </div>
+        </section>
+
+        <section id="tradein" class="section section-soft">
+            <div class="container section-header">
+                <div>
+                    <p class="eyebrow" data-i18n="calculatorEyebrow">Get an instant estimate</p>
+                    <h2 data-i18n="calculatorTitle">Trade-In calculator</h2>
+                </div>
+            </div>
+            <div class="container calculator-grid">
+                <div class="calculator-card">
+                    <div class="form-group">
+                        <label data-i18n="currentBrandLabel">Current Phone Brand</label>
+                        <select id="oldBrand" class="form-input">
+                            <option value="" data-i18n="selectBrand">Select Brand</option>
+                            <option value="iPhone">iPhone</option>
+                            <option value="Samsung">Samsung</option>
+                            <option value="Huawei">Huawei</option>
+                            <option value="Xiaomi">Xiaomi</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label data-i18n="modelLabel">Model</label>
+                        <input type="text" id="oldModel" class="form-input" placeholder="e.g., iPhone 12" data-i18n-placeholder="modelPlaceholder">
+                    </div>
+                    <div class="form-group">
+                        <label data-i18n="conditionLabel">Condition</label>
+                        <select id="condition" class="form-input">
+                            <option value="excellent">Excellent</option>
+                            <option value="good">Good</option>
+                            <option value="fair">Fair</option>
+                            <option value="poor">Poor</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label data-i18n="desiredPhoneLabel">Desired New Phone</label>
+                        <select id="newPhone" class="form-input">
+                            <option value="" data-i18n="selectPhone">Select Phone</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-primary" id="calculateBtn" data-i18n="calculateButton">Calculate Trade Value</button>
+                </div>
+                <div class="calculator-summary card-soft hidden" id="tradeResult">
+                    <p><strong data-i18n="phoneValueLabel">Your phone's value:</strong> <span id="oldPhoneValue">R0</span></p>
+                    <p><strong data-i18n="newPhonePriceLabel">New phone price:</strong> <span id="newPhonePrice">R0</span></p>
+                    <p class="highlight"><strong data-i18n="topupLabel">Top-up amount needed:</strong> <span id="topupAmount">R0</span></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="service" class="section">
+            <div class="container section-header">
+                <div>
+                    <p class="eyebrow" data-i18n="serviceEyebrow">Secure support</p>
+                    <h2 data-i18n="serviceTitle">Customer service and risk mitigation</h2>
+                    <p class="section-description" data-i18n="serviceSubtitle">Admin tools to validate KYC, block suspicious activity, and keep every trade safe.</p>
+                </div>
+            </div>
+            <div class="container support-grid">
+                <article class="support-card">
+                    <h3 data-i18n="supportCard1Title">Fast local support</h3>
+                    <p data-i18n="supportCard1Text">Chat with buyers and sellers, manage returns, and resolve disputes cleanly.</p>
+                </article>
+                <article class="support-card">
+                    <h3 data-i18n="supportCard2Title">Verified sellers</h3>
+                    <p data-i18n="supportCard2Text">KYC checks and seller ratings keep the marketplace trusted and transparent.</p>
+                </article>
+                <article class="support-card">
+                    <h3 data-i18n="supportCard3Title">Risk controls</h3>
+                    <p data-i18n="supportCard3Text">Flag suspicious listings and accounts before they impact buyers or the brand.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="adminPanel" class="section admin-panel hidden">
+            <div class="container admin-header">
+                <div>
+                    <p class="eyebrow" data-i18n="adminPanelEyebrow">Admin workspace</p>
+                    <h2 data-i18n="adminPanelTitle">Admin Service Desk</h2>
+                    <p class="section-description" data-i18n="adminPanelSubtitle">Review user verification, blocked accounts, support tickets, and risk alerts.</p>
+                </div>
+            </div>
+            <div class="container admin-grid">
+                <div class="admin-card">
+                    <h3 data-i18n="pendingKyc">Pending KYC</h3>
+                    <p id="pendingKycCount">0</p>
+                </div>
+                <div class="admin-card">
+                    <h3 data-i18n="fraudAlerts">Fraud Alerts</h3>
+                    <p id="fraudAlertsCount">0</p>
+                </div>
+                <div class="admin-card">
+                    <h3 data-i18n="supportTickets">Open Support Tickets</h3>
+                    <p id="supportTicketsCount">0</p>
+                </div>
+                <div class="admin-card">
+                    <h3 data-i18n="blockedAccounts">Blocked Accounts</h3>
+                    <p id="blockedAccountsCount">0</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-row">
+            <p>&copy; 2026 MobileTrade. All rights reserved. South Africa | Johannesburg | Cape Town</p>
+        </div>
+    </footer>
+
+    <div id="phoneModal" class="modal">
+        <div class="modal-content modal-lg">
+            <span class="close">&times;</span>
+            <div id="phoneDetails"></div>
+            <button class="btn btn-primary" id="buyBtn" data-i18n="proceedButton">Proceed to Payment</button>
+        </div>
+    </div>
+
+    <div id="sellModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 data-i18n="listPhoneTitle">List Your Phone</h2>
+            <form id="sellForm" class="form">
+                <div class="form-group">
+                    <label data-i18n="brandLabel">Phone Brand</label>
+                    <select name="brand" class="form-input" required>
+                        <option value="" data-i18n="selectBrand">Select Brand</option>
+                        <option value="iPhone">iPhone</option>
+                        <option value="Samsung">Samsung</option>
+                        <option value="Huawei">Huawei</option>
+                        <option value="Xiaomi">Xiaomi</option>
+                        <option value="OnePlus">OnePlus</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label data-i18n="modelLabel">Model</label>
+                    <input type="text" name="model" placeholder="e.g., iPhone 13 Pro Max" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label data-i18n="priceLabel">Price (R)</label>
+                    <input type="number" name="price" placeholder="Enter price in Rands" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label data-i18n="conditionLabel">Condition</label>
+                    <select name="condition" class="form-input" required>
+                        <option value="excellent" data-i18n="excellent">Excellent</option>
+                        <option value="good" data-i18n="good">Good</option>
+                        <option value="fair" data-i18n="fair">Fair</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label data-i18n="storageLabel">Storage Capacity</label>
+                    <input type="text" name="storage" placeholder="e.g., 128GB" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label data-i18n="descriptionLabel">Description</label>
+                    <textarea name="description" placeholder="Describe phone condition, features, etc." class="form-input" rows="4"></textarea>
+                </div>
+                <div class="form-group">
+                    <label data-i18n="photosLabel">Upload Photos</label>
+                    <input type="file" name="photos" multiple accept="image/*" class="form-input">
+                </div>
+                <button type="submit" class="btn btn-primary" data-i18n="listPhoneButton">List Phone</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 data-i18n="loginTitle">Login to MobileTrade</h2>
+            <form id="loginForm" class="form">
+                <div class="form-group">
+                    <label data-i18n="emailLabel">Email</label>
+                    <input type="email" name="email" placeholder="your@email.com" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label data-i18n="passwordLabel">Password</label>
+                    <input type="password" name="password" placeholder="••••••••" class="form-input" required>
+                </div>
+                <button type="submit" class="btn btn-primary" data-i18n="loginButton">Login</button>
+                <p class="small-text" data-i18n="registerPrompt">Don't have an account? <a href="#register">Register here</a></p>
+            </form>
+        </div>
+    </div>
+
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 data-i18n="registerTitle">Register with MobileTrade</h2>
+            <form id="registerForm" class="form">
+                <div class="form-group">
+                    <label data-i18n="fullNameLabel">Full Name</label>
+                    <input type="text" name="fullName" placeholder="John Doe" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label data-i18n="emailLabel">Email</label>
+                    <input type="email" name="email" placeholder="your@email.com" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label data-i18n="phoneLabel">Phone Number</label>
+                    <input type="tel" name="phone" placeholder="+27 123 456 7890" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label data-i18n="passwordLabel">Password</label>
+                    <input type="password" name="password" placeholder="••••••••" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label data-i18n="idNumberLabel">ID Number (for KYC)</label>
+                    <input type="text" name="idNumber" placeholder="ID or Passport Number" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label data-i18n="uploadIdLabel">Upload ID Document</label>
+                    <input type="file" name="idDocument" accept="image/*,.pdf" class="form-input" required>
+                </div>
+                <button type="submit" class="btn btn-primary" data-i18n="registerButton">Register</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="adminLoginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 data-i18n="adminTitle">Admin Login</h2>
+            <p class="modal-subtitle" data-i18n="adminSubtitle">Access customer service and risk mitigation controls.</p>
+            <form id="adminLoginForm" class="form">
+                <div class="form-group">
+                    <label data-i18n="emailLabel">Email</label>
+                    <input type="email" name="email" placeholder="admin@mobiletrade.co.za" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label data-i18n="passwordLabel">Password</label>
+                    <input type="password" name="password" placeholder="Admin password" class="form-input" required>
+                </div>
+                <button type="submit" class="btn btn-primary" data-i18n="adminLoginButton">Admin Login</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
